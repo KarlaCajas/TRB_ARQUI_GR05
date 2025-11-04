@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Cliente SOAP{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <header class="dashboard-header">
+        <h1>🎓 Dashboard - Monster University</h1>
+        <div class="user-info">
+            <span>👤 Bienvenido, <strong>{{ usuario }}</strong></span>
+            <a href="{{ url_for('logout') }}" class="btn btn-secondary">Cerrar Sesión</a>
+        </div>
+    </header>
+    
+    <div class="dashboard-content">
+        <h2>� Conversiones de Unidades</h2>
+        
+        <div class="conversions-grid">
+            <div class="conversion-category-card">
+                <div class="category-icon">⚖️</div>
+                <h3>Conversión de Masa</h3>
+                <p>Convierte entre kilogramos, gramos, libras, onzas y más</p>
+                <a href="{{ url_for('convertir', categoria='masa') }}" 
+                   class="btn btn-primary">Convertir Masa</a>
+            </div>
+            
+            <div class="conversion-category-card">
+                <div class="category-icon">📏</div>
+                <h3>Conversión de Longitud</h3>
+                <p>Convierte entre metros, centímetros, kilómetros, pies, pulgadas y más</p>
+                <a href="{{ url_for('convertir', categoria='longitud') }}" 
+                   class="btn btn-primary">Convertir Longitud</a>
+            </div>
+            
+            <div class="conversion-category-card">
+                <div class="category-icon">🌡️</div>
+                <h3>Conversión de Temperatura</h3>
+                <p>Convierte entre Celsius, Fahrenheit y Kelvin</p>
+                <a href="{{ url_for('convertir', categoria='temperatura') }}" 
+                   class="btn btn-primary">Convertir Temperatura</a>
+            </div>
+        </div>
+        
+        <h2>�📡 Operaciones SOAP Disponibles</h2>
+        
+        {% if operaciones %}
+            <div class="operations-grid">
+                {% for operacion in operaciones %}
+                    <div class="operation-card">
+                        <h3>{{ operacion }}</h3>
+                        <a href="{{ url_for('ejecutar_operacion', nombre=operacion) }}" 
+                           class="btn btn-primary">Ejecutar</a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert alert-warning">
+                <p>⚠️ No se pudieron cargar las operaciones del servicio SOAP.</p>
+                <p>Verifique que el servicio esté ejecutándose en:</p>
+                <code>http://localhost:8080/ConUni_Soap_Java_GR05/CONUNI?wsdl</code>
+            </div>
+        {% endif %}
+        
+        <div class="service-info">
+            <h3>ℹ️ Información del Servicio</h3>
+            <p><strong>URL WSDL:</strong> <code>http://localhost:8080/ConUni_Soap_Java_GR05/CONUNI?wsdl</code></p>
+            <p><strong>Namespace:</strong> <code>http://controlador.monster.edu.ec/</code></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

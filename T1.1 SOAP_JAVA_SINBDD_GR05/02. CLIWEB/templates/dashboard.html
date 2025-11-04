@@ -1,0 +1,46 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Dashboard - Sistema de Conversiones{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <header class="dashboard-header">
+        <h1> Dashboard - Monster University</h1>
+        <div class="user-info">
+            <span> Bienvenido, <strong>{{ usuario }}</strong></span>
+            <a href="{{ url_for('logout') }}" class="btn btn-secondary">Cerrar Sesión</a>
+        </div>
+    </header>
+    
+    <div class="dashboard-content">
+        <h2> Sistema de Conversión de Unidades</h2>
+        <p class="dashboard-subtitle">Seleccione la categoría de conversión que desea realizar</p>
+        
+        <div class="conversions-grid">
+            <div class="conversion-category-card">
+                <div class="category-icon">🌡️</div>
+                <h3>Conversión de Temperatura</h3>
+                <p>Convierte entre Celsius (°C), Fahrenheit (°F) y Kelvin (K)</p>
+                <a href="{{ url_for('convertir', categoria='temperatura') }}" 
+                   class="btn btn-primary">Convertir Temperatura</a>
+            </div>
+            
+            <div class="conversion-category-card">
+                <div class="category-icon">⚖️</div>
+                <h3>Conversión de Masa</h3>
+                <p>Convierte entre toneladas, kilogramos, gramos y miligramos</p>
+                <a href="{{ url_for('convertir', categoria='masa') }}" 
+                   class="btn btn-primary">Convertir Masa</a>
+            </div>
+            
+            <div class="conversion-category-card">
+                <div class="category-icon">📏</div>
+                <h3>Conversión de Longitud</h3>
+                <p>Convierte entre kilómetros, metros, centímetros y milímetros</p>
+                <a href="{{ url_for('convertir', categoria='longitud') }}" 
+                   class="btn btn-primary">Convertir Longitud</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

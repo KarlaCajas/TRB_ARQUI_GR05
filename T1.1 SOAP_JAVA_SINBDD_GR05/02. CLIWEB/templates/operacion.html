@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}{{ nombre }} - Cliente SOAP{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <header class="dashboard-header">
+        <h1>🔧 Ejecutar Operación: {{ nombre }}</h1>
+        <div class="user-info">
+            <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">← Volver al Dashboard</a>
+            <a href="{{ url_for('logout') }}" class="btn btn-secondary">Cerrar Sesión</a>
+        </div>
+    </header>
+    
+    <div class="dashboard-content">
+        <div class="operation-form">
+            <h2>📝 Parámetros de Entrada</h2>
+            
+            <form method="POST">
+                {% if parametros %}
+                    {% for param in parametros %}
+                        <div class="form-group">
+                            <label for="{{ param.nombre }}">
+                                {{ param.nombre }} 
+                                <span class="param-type">({{ param.tipo }})</span>
+                            </label>
+                            <input type="text" 
+                                   id="{{ param.nombre }}" 
+                                   name="{{ param.nombre }}" 
+                                   placeholder="Ingrese {{ param.nombre }}">
+                        </div>
+                    {% endfor %}
+                    
+                    <button type="submit" class="btn btn-primary">▶️ Ejecutar Operación</button>
+                {% else %}
+                    <p class="info-text">Esta operación no requiere parámetros de entrada.</p>
+                    <button type="submit" class="btn btn-primary">▶️ Ejecutar Operación</button>
+                {% endif %}
+            </form>
+        </div>
+        
+        {% if resultado is not none or error %}
+            <div class="operation-result">
+                <h2>📊 Resultado</h2>
+                
+                {% if error %}
+                    <div class="alert alert-error">
+                        <strong>❌ Error:</strong>
+                        <pre>{{ error }}</pre>
+                    </div>
+                {% else %}
+                    <div class="alert alert-success">
+                        <strong>✅ Operación ejecutada exitosamente</strong>
+                    </div>
+                    <div class="result-box">
+                        <pre>{{ resultado }}</pre>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

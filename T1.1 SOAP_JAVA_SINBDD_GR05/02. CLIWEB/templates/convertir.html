@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}{{ titulo }} - Cliente SOAP{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <header class="dashboard-header">
+        <h1>{{ titulo }}</h1>
+        <div class="user-info">
+            <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">← Volver al Dashboard</a>
+            <a href="{{ url_for('logout') }}" class="btn btn-secondary">Cerrar Sesión</a>
+        </div>
+    </header>
+    
+    <div class="dashboard-content">
+        <div class="conversion-with-image">
+            <div class="monster-assistant">
+                <img src="{{ url_for('static', filename='images/conten_pant.png') }}" alt="Monster Asistente" class="monster-image">
+            </div>
+            
+            <div class="conversion-container">
+                <div class="conversion-form">
+                    <h2>🔄 Realizar Conversión</h2>
+                
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="tipo_conversion">Seleccione el tipo de conversión:</label>
+                        <select id="tipo_conversion" name="tipo_conversion" required class="form-select">
+                            <option value="">-- Seleccione una opción --</option>
+                            {% for key, conv in conversiones.items() %}
+                                <option value="{{ key }}">{{ conv.nombre }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="valor">Ingrese el valor a convertir:</label>
+                        <input type="number" 
+                               id="valor" 
+                               name="valor" 
+                               step="any"
+                               required 
+                               placeholder="Ej: 10.5">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">🔄 Convertir</button>
+                </form>
+            </div>
+            
+            {% if resultado or error %}
+                <div class="conversion-result">
+                    <h2>📊 Resultado de la Conversión</h2>
+                    
+                    {% if error %}
+                        <div class="alert alert-error">
+                            <strong>❌ Error:</strong>
+                            <p>{{ error }}</p>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-success">
+                            <strong>✅ Conversión realizada exitosamente</strong>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-item">
+                                <span class="result-label">Valor Original:</span>
+                                <span class="result-value">{{ resultado.valor_original }} {{ resultado.unidad_original }}</span>
+                            </div>
+                            
+                            <div class="result-arrow">⬇️</div>
+                            
+                            <div class="result-item result-highlight">
+                                <span class="result-label">Valor Convertido:</span>
+                                <span class="result-value-big">{{ resultado.valor_convertido }} {{ resultado.unidad_convertida }}</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
