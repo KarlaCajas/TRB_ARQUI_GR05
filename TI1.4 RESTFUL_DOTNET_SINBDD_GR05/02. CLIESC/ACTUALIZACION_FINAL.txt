@@ -1,0 +1,214 @@
+════════════════════════════════════════════════════════════════
+   ✅ ACTUALIZACIÓN COMPLETADA
+════════════════════════════════════════════════════════════════
+
+📦 CALCULADORA CON INTEGRACIÓN REST API
+
+────────────────────────────────────────────────────────────────
+🆕 NUEVAS CARACTERÍSTICAS IMPLEMENTADAS
+────────────────────────────────────────────────────────────────
+
+🌐 CONEXIÓN CON SERVIDOR REST .NET:
+  ✓ Verificación automática de conexión al iniciar
+  ✓ Guardado automático de cada conversión realizada
+  ✓ Indicador de estado de conexión en tiempo real
+  ✓ Modo offline si el servidor no está disponible
+  ✓ Manejo inteligente de errores de conexión
+
+🚪 CERRAR SESIÓN Y VOLVER AL LOGIN:
+  ✓ Botón "🚪 Cerrar Sesión" funcional
+  ✓ Confirmación antes de cerrar sesión
+  ✓ Vuelve automáticamente al login
+  ✓ Permite cambiar de usuario sin cerrar la app
+  ✓ Loop infinito: Login → Calculadora → Logout → Login
+
+❌ SALIR DE LA APLICACIÓN:
+  ✓ Botón X de la ventana
+  ✓ Confirmación antes de salir
+  ✓ Cierre completo de la aplicación
+
+────────────────────────────────────────────────────────────────
+🎯 FLUJO DE NAVEGACIÓN
+────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────┐
+│  1. INICIO → LOGIN                              │
+│  2. Login exitoso → CALCULADORA                 │
+│  3. Usuario realiza conversiones                │
+│  4. Cada conversión se guarda en el servidor    │
+│  5. Usuario hace clic en "Cerrar Sesión"        │
+│  6. Confirmación → Volver a LOGIN (paso 1)      │
+│                                                 │
+│  O                                              │
+│                                                 │
+│  5. Usuario hace clic en X                      │
+│  6. Confirmación → SALIR completamente          │
+└─────────────────────────────────────────────────┘
+
+────────────────────────────────────────────────────────────────
+🌐 ESTADOS DE CONEXIÓN
+────────────────────────────────────────────────────────────────
+
+CON SERVIDOR DISPONIBLE:
+  Estado: ✅ Conectado al servidor
+  - Conversiones se calculan Y se guardan
+  - Cada conversión crea un registro en la BD
+  - Indicador verde
+
+SIN SERVIDOR (OFFLINE):
+  Estado: ⚠️ Servidor no disponible (modo offline)
+  - Conversiones se calculan localmente
+  - NO se guardan en el servidor
+  - Indicador naranja
+  - La calculadora funciona normal
+
+DESPUÉS DE GUARDAR:
+  Estado: ✅ Guardado en servidor
+  - Confirmación de guardado exitoso
+  - Indicador verde
+
+ERROR AL GUARDAR:
+  Estado: ⚠️ No se pudo guardar
+  - La conversión se calculó bien
+  - Error temporal con el servidor
+  - Indicador naranja
+
+────────────────────────────────────────────────────────────────
+📊 DATOS GUARDADOS EN EL SERVIDOR
+────────────────────────────────────────────────────────────────
+
+Cada conversión realizada guarda:
+
+{
+  "tipoConversion": "Temperatura - Celsius a Fahrenheit",
+  "unidadOrigen": "Fahrenheit",
+  "unidadDestino": "",
+  "factorConversion": 2.8,
+  "descripcion": "Conversión realizada por MONSTER: 25 °C = 77.00 °F"
+}
+
+Endpoint: POST http://localhost:5014/api/ConversionUnidades_Controlador
+
+────────────────────────────────────────────────────────────────
+🚀 CÓMO EJECUTAR
+────────────────────────────────────────────────────────────────
+
+CON SERVIDOR (Recomendado):
+  1. Inicia el servidor REST .NET en localhost:5014
+  2. python app.py
+  3. Las conversiones se guardarán automáticamente
+
+SIN SERVIDOR (Modo Offline):
+  1. python app.py
+  2. La app detecta que no hay servidor
+  3. Funciona como calculadora local
+  4. Conversiones NO se guardan
+
+────────────────────────────────────────────────────────────────
+🔐 CREDENCIALES
+────────────────────────────────────────────────────────────────
+
+  Usuario:     MONSTER
+  Contraseña:  Monster9
+
+────────────────────────────────────────────────────────────────
+💡 EJEMPLOS DE USO
+────────────────────────────────────────────────────────────────
+
+EJEMPLO 1: Uso con servidor
+  1. Inicia app con servidor ejecutándose
+  2. Login: MONSTER / Monster9
+  3. Ve: "✅ Conectado al servidor"
+  4. Conversión: 25°C → 77°F
+  5. Ve: "✅ Guardado en servidor"
+  6. Conversión guardada en la BD
+  7. Clic en "Cerrar Sesión"
+  8. Vuelve al login
+
+EJEMPLO 2: Uso sin servidor
+  1. Inicia app sin servidor
+  2. Login: MONSTER / Monster9
+  3. Ve: "⚠️ Servidor no disponible (modo offline)"
+  4. Conversión: 2.5kg → 2500g
+  5. Estado permanece en offline
+  6. Conversión NO se guarda
+  7. Clic en X → Confirma → Sale
+
+EJEMPLO 3: Cambio de usuario
+  1. Usuario MONSTER está logueado
+  2. Clic en "Cerrar Sesión"
+  3. Confirma
+  4. Vuelve al login
+  5. Puede ingresar con otro usuario
+  6. (Actualmente solo existe MONSTER)
+
+────────────────────────────────────────────────────────────────
+📁 ARCHIVOS ACTUALIZADOS
+────────────────────────────────────────────────────────────────
+
+🔧 MODIFICADOS:
+  ✓ main_window.py       - Integración con API REST
+  ✓ app.py              - Loop de login/logout
+  ✓ INICIO_RAPIDO.md    - Documentación actualizada
+
+🆕 CREADOS:
+  ✓ FLUJO_NAVEGACION.md - Documentación del flujo completo
+
+♻️ REUTILIZADOS:
+  ✓ api_client.py       - Cliente HTTP para API REST
+  ✓ login_window.py     - Sin cambios
+  ✓ requirements.txt    - Sin cambios
+
+────────────────────────────────────────────────────────────────
+✨ CARACTERÍSTICAS FINALES
+────────────────────────────────────────────────────────────────
+
+✅ Login con credenciales hardcodeadas
+✅ 9 tipos de conversiones (Temperatura, Masa, Longitud)
+✅ Resultados con unidades incluidas
+✅ Conexión con servidor REST .NET
+✅ Guardado automático en servidor
+✅ Modo offline funcional
+✅ Indicador de estado de conexión
+✅ Botón "Cerrar Sesión" funcional
+✅ Vuelve al login después de logout
+✅ Confirmaciones antes de acciones importantes
+✅ Manejo de errores robusto
+✅ Interfaz moderna y limpia
+
+────────────────────────────────────────────────────────────────
+📚 DOCUMENTACIÓN ACTUALIZADA
+────────────────────────────────────────────────────────────────
+
+  📖 README.md             - Documentación completa
+  ⚡ INICIO_RAPIDO.md      - Guía de inicio rápido (ACTUALIZADA)
+  📝 EJEMPLOS.md           - Ejemplos de conversiones
+  🔄 FLUJO_NAVEGACION.md   - Flujo completo (NUEVO)
+  🏗️ ARQUITECTURA.md       - Arquitectura del sistema
+  🎨 CAPTURAS.md           - Descripción visual
+  📑 INDICE.md             - Índice de documentación
+
+────────────────────────────────────────────────────────────────
+🎉 ¡ACTUALIZACIÓN COMPLETADA!
+────────────────────────────────────────────────────────────────
+
+  La calculadora ahora tiene:
+  
+  ✅ Conexión con servidor REST .NET
+  ✅ Guardado automático de conversiones
+  ✅ Modo offline funcional
+  ✅ Botón "Cerrar Sesión" que vuelve al login
+  ✅ Flujo completo de navegación
+
+  Para ejecutar:
+    python app.py
+
+  Con servidor:
+    - Inicia el servidor .NET en localhost:5014
+    - Las conversiones se guardarán automáticamente
+
+  Sin servidor:
+    - Funciona como calculadora local
+    - No se guardan las conversiones
+
+════════════════════════════════════════════════════════════════

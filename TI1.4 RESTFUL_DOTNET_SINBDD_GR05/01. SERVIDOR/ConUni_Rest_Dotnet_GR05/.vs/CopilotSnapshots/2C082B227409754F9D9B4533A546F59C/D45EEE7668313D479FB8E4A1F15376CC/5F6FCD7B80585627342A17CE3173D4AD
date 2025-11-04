@@ -1,0 +1,72 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using ConUni_Rest_Dotnet_GR05.ec.edu.monster.modelo;
+
+namespace ConUni_Rest_Dotnet_GR05.ec.edu.monster.controlador
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ConversionUnidades_Controlador : ControllerBase
+    {
+        [HttpGet]
+        public ActionResult<ConversionUnidades> Convertir(double valor, string unidadOrigen, string unidadDestino)
+        {
+            var conversion = new ConversionUnidades
+            {
+                Valor = valor,
+                UnidadOrigen = unidadOrigen,
+                UnidadDestino = unidadDestino
+            };
+
+            // Conversión de temperatura
+            if (conversion.UnidadOrigen == "Celsius" && conversion.UnidadDestino == "Fahrenheit")
+            {
+                conversion.Resultado = (conversion.Valor * 9 / 5) + 32;  // Celsius a Fahrenheit
+            }
+            else if (conversion.UnidadOrigen == "Fahrenheit" && conversion.UnidadDestino == "Celsius")
+            {
+                conversion.Resultado = (conversion.Valor - 32) * 5 / 9;  // Fahrenheit a Celsius
+            }
+            else if (conversion.UnidadOrigen == "Celsius" && conversion.UnidadDestino == "Kelvin")
+            {
+                conversion.Resultado = conversion.Valor + 273.15;  // Celsius a Kelvin
+            }
+
+            // Conversión de masa
+            else if (conversion.UnidadOrigen == "Kilogramo" && conversion.UnidadDestino == "Gramo")
+            {
+                conversion.Resultado = conversion.Valor * 1000;  // Kilogramo a Gramo
+            }
+            else if (conversion.UnidadOrigen == "Gramo" && conversion.UnidadDestino == "Miligramo")
+            {
+                conversion.Resultado = conversion.Valor * 1000;  // Gramo a Miligramo
+            }
+            else if (conversion.UnidadOrigen == "Tonelada" && conversion.UnidadDestino == "Kilogramo")
+            {
+                conversion.Resultado = conversion.Valor * 1000;  // Tonelada a Kilogramo
+            }
+
+            // Conversión de longitud
+            else if (conversion.UnidadOrigen == "Kilometro" && conversion.UnidadDestino == "Metro")
+            {
+                conversion.Resultado = conversion.Valor * 1000;  // Kilómetro a Metro
+            }
+            else if (conversion.UnidadOrigen == "Metro" && conversion.UnidadDestino == "Centimetro")
+            {
+                conversion.Resultado = conversion.Valor * 100;  // Metro a Centímetro
+            }
+            else if (conversion.UnidadOrigen == "Centimetro" && conversion.UnidadDestino == "Milimetro")
+            {
+                conversion.Resultado = conversion.Valor * 10;  // Centímetro a Milímetro
+            }
+
+            else
+            {
+                return BadRequest("Las unidades especificadas no son válidas.");
+            }
+
+            return Ok(conversion);  // Regresamos el objeto de la conversión
+        }
+    }
+}
+

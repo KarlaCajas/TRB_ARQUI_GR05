@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "abSvlfTTzuA=",
+  "success": true,
+  "projectFilePath": "C:\\Arquitectura G5\\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\\01. SERVIDOR\\ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\karly\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.9\\microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
+    "C:\\Users\\karly\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

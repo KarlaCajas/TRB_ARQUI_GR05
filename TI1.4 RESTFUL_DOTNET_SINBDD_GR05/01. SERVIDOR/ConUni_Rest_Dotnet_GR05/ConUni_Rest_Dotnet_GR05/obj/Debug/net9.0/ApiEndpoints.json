@@ -1,0 +1,68 @@
+[
+  {
+    "ContainingType": "ConUni_Rest_Dotnet_GR05.ec.edu.monster.controlador.ConversionUnidades_Controlador",
+    "Method": "Convertir",
+    "RelativePath": "api/ConversionUnidades_Controlador",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "valor",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "unidadOrigen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "unidadDestino",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ConUni_Rest_Dotnet_GR05.ec.edu.monster.modelo.ConversionUnidades",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
+    "ContainingType": "ConUni_Rest_Dotnet_GR05.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ConUni_Rest_Dotnet_GR05.WeatherForecast, ConUni_Rest_Dotnet_GR05, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

@@ -1,0 +1,191 @@
+════════════════════════════════════════════════════════════════
+   ✅ CALCULADORA DE CONVERSIÓN DE UNIDADES
+════════════════════════════════════════════════════════════════
+
+📦 APLICACIÓN DE ESCRITORIO EN PYTHON
+
+────────────────────────────────────────────────────────────────
+📁 ARCHIVOS DEL PROYECTO
+────────────────────────────────────────────────────────────────
+
+🐍 ARCHIVOS PYTHON (3):
+  ✓ app.py                   - Aplicación principal con login
+  ✓ login_window.py          - Ventana de autenticación
+  ✓ main_window.py           - Calculadora de conversiones
+
+📝 DOCUMENTACIÓN (6):
+  ✓ README.md                - Documentación completa
+  ✓ INICIO_RAPIDO.md         - Guía de inicio rápido
+  ✓ EJEMPLOS.md              - Ejemplos de conversiones
+  ✓ ARQUITECTURA.md          - Arquitectura del sistema
+  ✓ CAPTURAS.md              - Descripción visual
+  ✓ INDICE.md                - Índice de documentación
+
+⚙️ CONFIGURACIÓN (2):
+  ✓ requirements.txt         - Dependencias Python
+  ✓ .gitignore              - Exclusiones para Git
+
+🪟 SCRIPTS WINDOWS (2):
+  ✓ ejecutar.bat            - Ejecutar la aplicación
+  ✓ test_servidor.bat       - Probar conexión (no necesario)
+
+📊 ARCHIVOS ADICIONALES:
+  ✓ api_client.py           - Cliente API (no usado en esta versión)
+  ✓ test_connection.py      - Test conexión (no necesario)
+
+────────────────────────────────────────────────────────────────
+✨ CONVERSIONES DISPONIBLES
+────────────────────────────────────────────────────────────────
+
+🌡️ TEMPERATURA:
+  ✓ Celsius a Fahrenheit     (C → F)
+  ✓ Fahrenheit a Celsius     (F → C)
+  ✓ Celsius a Kelvin         (C → K)
+
+⚖️ MASA:
+  ✓ Kilogramos a Gramos      (kg → g)
+  ✓ Gramos a Miligramos      (g → mg)
+  ✓ Toneladas a Kilogramos   (t → kg)
+
+📏 LONGITUD:
+  ✓ Kilómetros a Metros      (km → m)
+  ✓ Metros a Centímetros     (m → cm)
+  ✓ Centímetros a Milímetros (cm → mm)
+
+────────────────────────────────────────────────────────────────
+✨ CARACTERÍSTICAS IMPLEMENTADAS
+────────────────────────────────────────────────────────────────
+
+🔐 AUTENTICACIÓN:
+  ✓ Ventana de login con validación
+  ✓ Credenciales hardcodeadas (MONSTER / Monster9)
+  ✓ Validación de campos vacíos
+  ✓ Mensajes de error/éxito
+
+🔄 CALCULADORA DE CONVERSIONES:
+  ✓ Selección de categoría (Temperatura, Masa, Longitud)
+  ✓ Selección de tipo de conversión específica
+  ✓ Campo de entrada para valor numérico
+  ✓ Botón de conversión
+  ✓ Resultados con unidades incluidas
+  ✓ Precisión de 2 decimales
+
+🎨 INTERFAZ GRÁFICA:
+  ✓ Diseño moderno con Tkinter
+  ✓ Layout limpio y organizado
+  ✓ ComboBox para selecciones
+  ✓ Campos de entrada validados
+  ✓ Botones con colores semánticos
+  ✓ Resultados destacados visualmente
+  ✓ Centrado automático de ventanas
+
+📊 VALIDACIÓN Y MANEJO DE ERRORES:
+  ✓ Validación de campos requeridos
+  ✓ Validación de valores numéricos
+  ✓ Mensajes de error descriptivos
+  ✓ Prevención de errores comunes
+
+────────────────────────────────────────────────────────────────
+🚀 CÓMO EJECUTAR
+────────────────────────────────────────────────────────────────
+
+MÉTODO 1 - Script automático (Recomendado):
+  Doble clic en: ejecutar.bat
+
+MÉTODO 2 - Línea de comandos:
+  1. cd "c:\Arquitectura G5\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\02. CLIESC"
+  2. pip install -r requirements.txt
+  3. python app.py
+
+────────────────────────────────────────────────────────────────
+🔐 CREDENCIALES DE ACCESO
+────────────────────────────────────────────────────────────────
+
+  Usuario:     MONSTER
+  Contraseña:  Monster9
+
+────────────────────────────────────────────────────────────────
+📋 REQUISITOS DEL SISTEMA
+────────────────────────────────────────────────────────────────
+
+  ✓ Python 3.7 o superior
+  ✓ Librería requests (pip install requests)
+  ✓ Tkinter (incluido con Python)
+
+────────────────────────────────────────────────────────────────
+🎯 CÓMO USAR
+────────────────────────────────────────────────────────────────
+
+  1. Ejecuta la aplicación (python app.py)
+  2. Inicia sesión con: MONSTER / Monster9
+  3. Selecciona una categoría (Temperatura, Masa, Longitud)
+  4. Elige el tipo de conversión específica
+  5. Ingresa el valor a convertir
+  6. Presiona "CONVERTIR" o Enter
+  7. ¡Ve el resultado con sus unidades!
+
+────────────────────────────────────────────────────────────────
+💡 EJEMPLOS DE USO
+────────────────────────────────────────────────────────────────
+
+  EJEMPLO 1: Temperatura
+    Categoría:  Temperatura
+    Conversión: Celsius a Fahrenheit
+    Valor:      25
+    Resultado:  25 °C = 77.00 °F
+
+  EJEMPLO 2: Masa
+    Categoría:  Masa
+    Conversión: Kilogramos a Gramos
+    Valor:      2.5
+    Resultado:  2.5 kg = 2500.00 g
+
+  EJEMPLO 3: Longitud
+    Categoría:  Longitud
+    Conversión: Metros a Centímetros
+    Valor:      1.5
+    Resultado:  1.5 m = 150.00 cm
+
+────────────────────────────────────────────────────────────────
+📚 DOCUMENTACIÓN
+────────────────────────────────────────────────────────────────
+
+  📖 Completa:      README.md
+  ⚡ Rápida:        INICIO_RAPIDO.md
+  📝 Ejemplos:      EJEMPLOS.md
+  🏗️ Técnica:       ARQUITECTURA.md
+  🎨 Visual:        CAPTURAS.md
+  📑 Índice:        INDICE.md
+
+────────────────────────────────────────────────────────────────
+✅ CARACTERÍSTICAS ESPECIALES
+────────────────────────────────────────────────────────────────
+
+  ✓ Sin necesidad de servidor REST
+  ✓ Funciona completamente offline
+  ✓ Cálculos locales instantáneos
+  ✓ No requiere conexión a internet
+  ✓ Ligero y rápido
+  ✓ Fácil de usar
+
+────────────────────────────────────────────────────────────────
+🎉 ¡PROYECTO COMPLETADO!
+────────────────────────────────────────────────────────────────
+
+  La calculadora de conversión de unidades está lista para usar.
+  
+  ✅ 9 tipos de conversiones diferentes
+  ✅ 3 categorías (Temperatura, Masa, Longitud)
+  ✅ Interfaz gráfica moderna
+  ✅ Login con credenciales
+  ✅ Resultados con unidades
+  ✅ Validación completa
+  ✅ Documentación extensa
+
+  Para comenzar, simplemente ejecuta:
+    python app.py
+
+  O haz doble clic en:
+    ejecutar.bat
+
+════════════════════════════════════════════════════════════════
