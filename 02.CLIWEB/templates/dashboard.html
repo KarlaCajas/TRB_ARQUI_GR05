@@ -1,0 +1,157 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Dashboard - Conversiones MONSTER{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <div class="header-left">
+            <span class="header-icon">🎯</span>
+            <h1>Sistema de Conversiones MONSTER</h1>
+        </div>
+        <div class="header-right">
+            <div class="user-badge">
+                👤 {{ session['username'] }}
+            </div>
+            <a href="{{ url_for('logout') }}" class="btn-logout">Cerrar Sesión</a>
+        </div>
+    </div>
+
+    <div class="dashboard-content" style="background-image: url('{{ url_for('static', filename='images/Monsters_university_6.jpg') }}');">
+        <div class="conversion-panel">
+            <div class="panel-header">
+                <h2>🔄 Conversión de Unidades</h2>
+                <p>Seleccione una categoría para realizar conversiones</p>
+            </div>
+
+            <div class="server-status">
+                <span class="status-dot"></span>
+                <span>Servidor SOAP Conectado</span>
+                <span class="status-url">http://localhost:63393/Service.svc</span>
+            </div>
+
+            <div class="category-grid">
+                <div class="category-card" onclick="openModal('MASA')">
+                    <div class="card-icon">⚖️</div>
+                    <h3>MASA</h3>
+                    <p class="card-subtitle">Kilogramos ↔ Libras ↔ Onzas</p>
+                </div>
+
+                <div class="category-card" onclick="openModal('LONGITUD')">
+                    <div class="card-icon">📏</div>
+                    <h3>LONGITUD</h3>
+                    <p class="card-subtitle">Metros ↔ Pies ↔ Millas</p>
+                </div>
+
+                <div class="category-card" onclick="openModal('TEMPERATURA')">
+                    <div class="card-icon">🌡️</div>
+                    <h3>TEMPERATURA</h3>
+                    <p class="card-subtitle">Celsius ↔ Fahrenheit ↔ Kelvin</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="conversionModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="modal-icon" id="modalIcon">⚖️</div>
+            <h2 id="modalTitle">Conversión de MASA</h2>
+            <p id="modalSubtitle">Realice la conversión seleccionando el tipo</p>
+        </div>
+
+        <form method="POST" action="{{ url_for('convertir') }}">
+            <input type="hidden" name="categoria" id="categoriaInput">
+            
+            <div class="form-group-conversion">
+                <label>📋 Tipo de Conversión</label>
+                <select name="tipo_conversion" id="tipoConversion" required>
+                    <option value="">Seleccione una opción...</option>
+                </select>
+            </div>
+
+            <div class="form-group-conversion">
+                <label>🔢 Valor a Convertir</label>
+                <input type="number" name="valor" step="any" placeholder="Ingrese el valor" required>
+            </div>
+
+            <div class="modal-buttons">
+                <button type="submit" class="btn-convert">🔄 Convertir</button>
+                <button type="button" class="btn-back" onclick="closeModal()">⬅ Volver</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const conversiones = {
+        'MASA': {
+            icon: '⚖️',
+            title: 'Conversión de MASA',
+            subtitle: 'Kilogramos, Libras y Onzas',
+            opciones: [
+                { value: 'kg_lb', text: 'Kilogramos → Libras' },
+                { value: 'lb_kg', text: 'Libras → Kilogramos' },
+                { value: 'kg_oz', text: 'Kilogramos → Onzas' }
+            ]
+        },
+        'LONGITUD': {
+            icon: '📏',
+            title: 'Conversión de LONGITUD',
+            subtitle: 'Metros, Pies y Millas',
+            opciones: [
+                { value: 'm_ft', text: 'Metros → Pies' },
+                { value: 'ft_m', text: 'Pies → Metros' },
+                { value: 'km_mi', text: 'Kilómetros → Millas' }
+            ]
+        },
+        'TEMPERATURA': {
+            icon: '🌡️',
+            title: 'Conversión de TEMPERATURA',
+            subtitle: 'Celsius, Fahrenheit y Kelvin',
+            opciones: [
+                { value: 'celsius_fahrenheit', text: 'Celsius → Fahrenheit' },
+                { value: 'fahrenheit_celsius', text: 'Fahrenheit → Celsius' },
+                { value: 'celsius_kelvin', text: 'Celsius → Kelvin' }
+            ]
+        }
+    };
+
+    function openModal(categoria) {
+        const modal = document.getElementById('conversionModal');
+        const config = conversiones[categoria];
+        
+        document.getElementById('modalIcon').textContent = config.icon;
+        document.getElementById('modalTitle').textContent = config.title;
+        document.getElementById('modalSubtitle').textContent = config.subtitle;
+        document.getElementById('categoriaInput').value = categoria;
+        
+        const select = document.getElementById('tipoConversion');
+        select.innerHTML = '<option value="">Seleccione una opción...</option>';
+        
+        config.opciones.forEach(opcion => {
+            const option = document.createElement('option');
+            option.value = opcion.value;
+            option.textContent = opcion.text;
+            select.appendChild(option);
+        });
+        
+        modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('conversionModal');
+        modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('conversionModal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    };
+</script>
+{% endblock %}
