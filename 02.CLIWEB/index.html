@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversiones de Unidades - Monsters University</title>
+    <link rel="stylesheet" href="styles.css?v=2.0">
+</head>
+<body>
+    <!-- PANTALLA 1: Login -->
+    <div id="loginScreen" class="screen active">
+        <div class="login-container">
+            <div class="login-image">
+                <img src="login-solivan.jpeg" alt="Sullivan">
+            </div>
+            
+            <div class="login-header">
+                <h1>Conversiones de Unidades</h1>
+            </div>
+            
+            <div class="login-form">
+                <div class="form-group">
+                    <label for="username">👤 Usuario</label>
+                    <div class="input-with-icon">
+                        <span class="input-icon">👤</span>
+                        <input type="text" id="username" placeholder="Ingrese su usuario" autocomplete="off">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">🔒 Contraseña</label>
+                    <div class="input-with-icon">
+                        <span class="input-icon">🔒</span>
+                        <input type="password" id="password" placeholder="Ingrese su contraseña">
+                    </div>
+                </div>
+                
+                <button class="btn btn-success" onclick="validarLogin()">🚀 Ingresar</button>
+                
+                <div class="footer-text">
+                    <p>💡 Credenciales: MONSTER / Monster9</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANTALLA 2: Selección de Categoría -->
+    <div id="categoryScreen" class="screen">
+        <header class="header">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>🎓 Conversión de Unidades</h1>
+                    <p>Seleccione una categoría para realizar conversiones</p>
+                </div>
+                <button class="btn-logout-header" onclick="cerrarSesion()">🚪 Cerrar Sesión</button>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <div class="category-grid">
+                <div class="category-card" onclick="seleccionarCategoria('masa')">
+                    <div class="category-icon">⚖️</div>
+                    <h2>MASA</h2>
+                    <p>Kilogramos ↔ Libras ↔ Onzas</p>
+                </div>
+
+                <div class="category-card" onclick="seleccionarCategoria('longitud')">
+                    <div class="category-icon">📏</div>
+                    <h2>LONGITUD</h2>
+                    <p>Metros ↔ Pies ↔ Millas</p>
+                </div>
+
+                <div class="category-card" onclick="seleccionarCategoria('temperatura')">
+                    <div class="category-icon">🌡️</div>
+                    <h2>TEMPERATURA</h2>
+                    <p>Celsius ↔ Fahrenheit ↔ Kelvin</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANTALLA 3: Conversión -->
+    <div id="conversionScreen" class="screen">
+        <header class="header">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>🎓 MONSTERS UNIVERSITY 🎓</h1>
+                    <p>Sistema de Conversión de Unidades RESTful</p>
+                </div>
+                <button class="btn-logout-header" onclick="cerrarSesion()">🚪 Cerrar Sesión</button>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <div class="content">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>📊 Selecciona el tipo de conversión</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="conversion">Conversión:</label>
+                            <select id="conversion">
+                                <option value="">-- Seleccione una conversión --</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="valor">Valor a Convertir:</label>
+                            <input type="number" id="valor" placeholder="Ingrese el valor" step="any">
+                        </div>
+
+                        <button class="btn btn-primary" onclick="realizarConversion()">Convertir 🔄</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <button class="btn-back" onclick="volverACategorias()">⬅️ Volver a Categorías</button>
+        </footer>
+    </div>
+
+    <!-- PANTALLA 4: Resultado -->
+    <div id="resultScreen" class="screen">
+        <header class="header">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>🎓 MONSTERS UNIVERSITY 🎓</h1>
+                    <p>Sistema de Conversión de Unidades RESTful</p>
+                </div>
+                <button class="btn-logout-header" onclick="cerrarSesion()">🚪 Cerrar Sesión</button>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <div class="content">
+                <div class="result-card">
+                    <div class="result-header">
+                        <h2>✓ Resultado</h2>
+                    </div>
+                    <div class="result-body">
+                        <div id="resultadoValor" class="result-value">15.4323 lb</div>
+                        <div id="resultadoFormula" class="result-formula">7.0 kg = 15.4323 lb</div>
+                    </div>
+                    <div class="result-actions">
+                        <button class="btn btn-primary" onclick="volverDesdResultado()">⬅️ Volver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 Monsters University | Sistema RESTful de Conversiones</p>
+        </footer>
+    </div>
+
+    <script src="script.js?v=2.0"></script>
+</body>
+</html>

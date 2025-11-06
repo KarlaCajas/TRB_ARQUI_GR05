@@ -1,0 +1,475 @@
+/* ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.screen {
+    display: none;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* LOGIN SCREEN */
+#loginScreen.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    background: white;
+    border-radius: 25px;
+    padding: 60px 50px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+}
+
+.login-image img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #5B7CE6;
+    margin-bottom: 30px;
+}
+
+.login-header h1 {
+    font-size: 22px;
+    color: #5B7CE6;
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.input-with-icon {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px 14px 50px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 15px;
+    background-color: #f9f9f9;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #5B7CE6;
+    background-color: white;
+}
+
+.login-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.btn {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #5B7CE6 0%, #4A5FC1 100%);
+    color: white;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+    color: white;
+}
+
+.footer-text p {
+    font-size: 12px;
+    color: #999;
+    margin-top: 25px;
+}
+
+/* MAIN SCREEN */
+#mainScreen {
+    min-height: 100vh;
+    background: url(Monsters_university_6.jpg) center/cover no-repeat;
+}
+
+.header {
+    background: linear-gradient(135deg, rgba(91, 124, 230, 0.95), rgba(74, 95, 193, 0.95));
+    padding: 25px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-text h1 {
+    font-size: 26px;
+    color: white;
+    margin: 0;
+}
+
+.header-text p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 5px 0 0 0;
+}
+
+.btn-logout-header {
+    padding: 10px 20px;
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-logout-header:hover {
+    background: rgba(192, 57, 43, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* PANTALLA 3: CONVERSIÓN - Fondo con imagen */
+#conversionScreen {
+    background: url(Monsters_university_6.jpg) center/cover no-repeat;
+    min-height: 100vh;
+}
+
+#conversionScreen .main-container {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-logout {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.main-container {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 100%;
+    max-width: 900px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    margin-bottom: 25px;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #5B7CE6 0%, #4A5FC1 100%);
+    padding: 20px 30px;
+    color: white;
+}
+
+.card-header h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.card-body {
+    padding: 35px;
+}
+
+.form-row {
+    margin-bottom: 25px;
+}
+
+.form-group-inline {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-group-inline label {
+    min-width: 100px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group-inline select,
+.form-group-inline input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+.form-group-inline button {
+    padding: 14px 30px;
+}
+
+.resultado-container {
+    min-height: 150px;
+    background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #4CAF50;
+}
+
+.resultado-success {
+    color: #2E7D32;
+    white-space: pre-wrap;
+    font-family: Courier New, monospace;
+}
+
+.resultado-error {
+    color: #C62828;
+    background: #FFEBEE;
+    padding: 20px;
+    border-radius: 10px;
+    white-space: pre-wrap;
+    font-family: Courier New, monospace;
+}
+
+.footer {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* ========================================
+   PANTALLA 2: CATEGORÍAS
+   ======================================== */
+
+#categoryScreen {
+    background: url(Monsters_university_6.jpg) center/cover no-repeat;
+    min-height: 100vh;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.category-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.category-card h2 {
+    color: #2C3E50;
+    font-size: 24px;
+    margin: 15px 0;
+    font-weight: 700;
+}
+
+.category-card p {
+    color: #7F8C8D;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ========================================
+   PANTALLA 3: CONVERSIÓN
+   ======================================== */
+
+.btn-back {
+    background: linear-gradient(135deg, #95A5A6 0%, #7F8C8D 100%);
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+.btn-back:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   PANTALLA 4: RESULTADO
+   ======================================== */
+
+#resultScreen {
+    background: url(Monsters_university_6.jpg) center/cover no-repeat;
+    min-height: 100vh;
+}
+
+.result-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.result-header {
+    background: linear-gradient(135deg, #66BB6A 0%, #43A047 100%);
+    padding: 20px;
+    text-align: center;
+}
+
+.result-header h2 {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.result-body {
+    background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.result-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2E7D32;
+    margin-bottom: 20px;
+}
+
+.result-formula {
+    font-size: 18px;
+    color: #43A047;
+    font-weight: 500;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.result-actions {
+    padding: 25px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    background: white;
+}
+
+.result-actions .btn {
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.result-actions .btn-primary {
+    background: linear-gradient(135deg, #5B7CE6 0%, #4A5FC1 100%);
+    color: white;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #757575 0%, #616161 100%);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
