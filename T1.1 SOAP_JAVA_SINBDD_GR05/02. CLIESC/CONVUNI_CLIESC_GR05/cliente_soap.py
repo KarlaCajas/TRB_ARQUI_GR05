@@ -757,7 +757,8 @@ class MainWindow:
             resultado = funcion_conversion(valor_float)
             
             if resultado is not None:
-                resultado_label.config(text=f"Resultado: {resultado} {unidad_destino}")
+                # Formatear con 4 decimales y unidad abreviada
+                resultado_label.config(text=f"Resultado: {float(resultado):.4f} {unidad_destino}")
             else:
                 resultado_label.config(text="Resultado: Error")
                 

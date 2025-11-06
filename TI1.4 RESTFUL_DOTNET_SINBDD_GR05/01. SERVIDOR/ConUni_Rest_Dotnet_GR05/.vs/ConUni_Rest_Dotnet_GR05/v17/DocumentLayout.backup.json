@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Arquitectura G5\\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\\01. SERVIDOR\\ConUni_Rest_Dotnet_GR05\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E94878D6-6785-4B54-86FC-E56B5D1ADF88}|ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05.csproj|c:\\arquitectura g5\\ti1.4 restful_dotnet_sinbdd_gr05\\01. servidor\\conuni_rest_dotnet_gr05\\conuni_rest_dotnet_gr05\\ec.edu.monster.modelo\\conversionunidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E94878D6-6785-4B54-86FC-E56B5D1ADF88}|ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05.csproj|solutionrelative:conuni_rest_dotnet_gr05\\ec.edu.monster.modelo\\conversionunidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E94878D6-6785-4B54-86FC-E56B5D1ADF88}|ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05.csproj|c:\\arquitectura g5\\ti1.4 restful_dotnet_sinbdd_gr05\\01. servidor\\conuni_rest_dotnet_gr05\\conuni_rest_dotnet_gr05\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E94878D6-6785-4B54-86FC-E56B5D1ADF88}|ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05.csproj|solutionrelative:conuni_rest_dotnet_gr05\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E94878D6-6785-4B54-86FC-E56B5D1ADF88}|ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05.csproj|c:\\arquitectura g5\\ti1.4 restful_dotnet_sinbdd_gr05\\01. servidor\\conuni_rest_dotnet_gr05\\conuni_rest_dotnet_gr05\\ec.edu.monster.controlador\\conversionunidades_controlador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E94878D6-6785-4B54-86FC-E56B5D1ADF88}|ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05.csproj|solutionrelative:conuni_rest_dotnet_gr05\\ec.edu.monster.controlador\\conversionunidades_controlador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E94878D6-6785-4B54-86FC-E56B5D1ADF88}|ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05.csproj|c:\\arquitectura g5\\ti1.4 restful_dotnet_sinbdd_gr05\\01. servidor\\conuni_rest_dotnet_gr05\\conuni_rest_dotnet_gr05\\ec.edu.monster.modelo\\conversionunidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E94878D6-6785-4B54-86FC-E56B5D1ADF88}|ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05.csproj|solutionrelative:conuni_rest_dotnet_gr05\\ec.edu.monster.modelo\\conversionunidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E94878D6-6785-4B54-86FC-E56B5D1ADF88}|ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05.csproj|c:\\arquitectura g5\\ti1.4 restful_dotnet_sinbdd_gr05\\01. servidor\\conuni_rest_dotnet_gr05\\conuni_rest_dotnet_gr05\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E94878D6-6785-4B54-86FC-E56B5D1ADF88}|ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05.csproj|solutionrelative:conuni_rest_dotnet_gr05\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,20 +26,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ConversionUnidades.cs",
               "DocumentMoniker": "C:\\Arquitectura G5\\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\\01. SERVIDOR\\ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05\\ec.edu.monster.modelo\\ConversionUnidades.cs",
               "RelativeDocumentMoniker": "ConUni_Rest_Dotnet_GR05\\ec.edu.monster.modelo\\ConversionUnidades.cs",
               "ToolTip": "C:\\Arquitectura G5\\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\\01. SERVIDOR\\ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05\\ec.edu.monster.modelo\\ConversionUnidades.cs",
               "RelativeToolTip": "ConUni_Rest_Dotnet_GR05\\ec.edu.monster.modelo\\ConversionUnidades.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T06:45:05.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-04T06:45:05.229Z"
             },
             {
               "$type": "Document",
@@ -41,9 +48,34 @@
               "RelativeDocumentMoniker": "ConUni_Rest_Dotnet_GR05\\ec.edu.monster.controlador\\ConversionUnidades_Controlador.cs",
               "ToolTip": "C:\\Arquitectura G5\\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\\01. SERVIDOR\\ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05\\ec.edu.monster.controlador\\ConversionUnidades_Controlador.cs",
               "RelativeToolTip": "ConUni_Rest_Dotnet_GR05\\ec.edu.monster.controlador\\ConversionUnidades_Controlador.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAwwAoAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-04T06:43:27.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Arquitectura G5\\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\\01. SERVIDOR\\ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05\\Program.cs",
+              "RelativeDocumentMoniker": "ConUni_Rest_Dotnet_GR05\\Program.cs",
+              "ToolTip": "C:\\Arquitectura G5\\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\\01. SERVIDOR\\ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05\\Program.cs",
+              "RelativeToolTip": "ConUni_Rest_Dotnet_GR05\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T04:14:16.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Arquitectura G5\\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\\01. SERVIDOR\\ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "ConUni_Rest_Dotnet_GR05\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Arquitectura G5\\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\\01. SERVIDOR\\ConUni_Rest_Dotnet_GR05\\ConUni_Rest_Dotnet_GR05\\Properties\\launchSettings.json",
+              "RelativeToolTip": "ConUni_Rest_Dotnet_GR05\\Properties\\launchSettings.json",
+              "ViewState": "AgIAABwAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-05T05:05:48.559Z"
             }
           ]
         }

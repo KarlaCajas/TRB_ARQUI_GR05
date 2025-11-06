@@ -78,9 +78,9 @@ def conversion_masa():
             
             # Mapeo de conversiones específicas
             conversiones = {
-                'kg-g': ('kilogramo', 'gramo', 'g'),
-                'g-mg': ('gramo', 'miligramo', 'mg'),
-                't-kg': ('tonelada', 'kilogramo', 'kg')
+                'kg-g': ('kilogramo', 'gramo', 'gramos'),
+                'g-mg': ('gramo', 'miligramo', 'miligramos'),
+                't-kg': ('tonelada', 'kilogramo', 'kilogramos')
             }
             
             if tipo_conversion not in conversiones:
@@ -101,10 +101,10 @@ def conversion_masa():
                 if response.status_code == 200:
                     data = response.json()
                     resultado = {
-                        'resultado': f"{data['resultado']} {simbolo}",
+                        'resultado': f"{data['resultado']:.4f} {simbolo}",
                         'valorOriginal': valor,
                         'unidadOrigen': de_unidad,
-                        'valorConvertido': data['resultado'],
+                        'valorConvertido': f"{data['resultado']:.4f}",
                         'unidadDestino': a_unidad
                     }
                     flash('Conversión realizada exitosamente', 'success')
@@ -138,9 +138,9 @@ def conversion_longitud():
             
             # Mapeo de conversiones específicas
             conversiones = {
-                'km-m': ('kilometro', 'metro', 'm'),
-                'm-cm': ('metro', 'centimetro', 'cm'),
-                'cm-mm': ('centimetro', 'milimetro', 'mm')
+                'km-m': ('kilometro', 'metro', 'metros'),
+                'm-cm': ('metro', 'centimetro', 'centímetros'),
+                'cm-mm': ('centimetro', 'milimetro', 'milímetros')
             }
             
             if tipo_conversion not in conversiones:
@@ -161,10 +161,10 @@ def conversion_longitud():
                 if response.status_code == 200:
                     data = response.json()
                     resultado = {
-                        'resultado': f"{data['resultado']} {simbolo}",
+                        'resultado': f"{data['resultado']:.4f} {simbolo}",
                         'valorOriginal': valor,
                         'unidadOrigen': de_unidad,
-                        'valorConvertido': data['resultado'],
+                        'valorConvertido': f"{data['resultado']:.4f}",
                         'unidadDestino': a_unidad
                     }
                     flash('Conversión realizada exitosamente', 'success')
@@ -198,9 +198,9 @@ def conversion_temperatura():
             
             # Mapeo de conversiones específicas
             conversiones = {
-                'c-f': ('celsius', 'fahrenheit', '°F'),
-                'f-c': ('fahrenheit', 'celsius', '°C'),
-                'c-k': ('celsius', 'kelvin', 'K')
+                'c-f': ('celsius', 'fahrenheit', 'grados Fahrenheit'),
+                'f-c': ('fahrenheit', 'celsius', 'grados Celsius'),
+                'c-k': ('celsius', 'kelvin', 'Kelvin')
             }
             
             if tipo_conversion not in conversiones:
@@ -221,10 +221,10 @@ def conversion_temperatura():
                 if response.status_code == 200:
                     data = response.json()
                     resultado = {
-                        'resultado': f"{data['resultado']} {simbolo}",
+                        'resultado': f"{data['resultado']:.4f} {simbolo}",
                         'valorOriginal': valor,
                         'unidadOrigen': de_unidad,
-                        'valorConvertido': data['resultado'],
+                        'valorConvertido': f"{data['resultado']:.4f}",
                         'unidadDestino': a_unidad
                     }
                     flash('Conversión realizada exitosamente', 'success')

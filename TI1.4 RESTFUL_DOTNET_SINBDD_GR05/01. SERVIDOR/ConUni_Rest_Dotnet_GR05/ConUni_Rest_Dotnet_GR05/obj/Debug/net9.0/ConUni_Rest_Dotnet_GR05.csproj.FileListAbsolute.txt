@@ -30,3 +30,5 @@ C:\Arquitectura G5\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\01. SERVIDOR\ConUni_Rest_Dot
 C:\Arquitectura G5\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\01. SERVIDOR\ConUni_Rest_Dotnet_GR05\ConUni_Rest_Dotnet_GR05\obj\Debug\net9.0\ConUni_Rest_Dotnet_GR05.pdb
 C:\Arquitectura G5\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\01. SERVIDOR\ConUni_Rest_Dotnet_GR05\ConUni_Rest_Dotnet_GR05\obj\Debug\net9.0\ConUni_Rest_Dotnet_GR05.genruntimeconfig.cache
 C:\Arquitectura G5\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\01. SERVIDOR\ConUni_Rest_Dotnet_GR05\ConUni_Rest_Dotnet_GR05\obj\Debug\net9.0\ref\ConUni_Rest_Dotnet_GR05.dll
+C:\Arquitectura G5\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\01. SERVIDOR\ConUni_Rest_Dotnet_GR05\ConUni_Rest_Dotnet_GR05\obj\Debug\net9.0\ConUni_Rest_Dotnet_GR05.sourcelink.json
+C:\Arquitectura G5\TI1.4 RESTFUL_DOTNET_SINBDD_GR05\01. SERVIDOR\ConUni_Rest_Dotnet_GR05\ConUni_Rest_Dotnet_GR05\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

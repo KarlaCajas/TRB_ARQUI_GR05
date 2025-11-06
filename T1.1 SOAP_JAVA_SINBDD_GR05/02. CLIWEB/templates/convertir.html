@@ -71,7 +71,7 @@
                             
                             <div class="result-item result-highlight">
                                 <span class="result-label">Valor Convertido:</span>
-                                <span class="result-value-big">{{ resultado.valor_convertido }} {{ resultado.unidad_convertida }}</span>
+                                <span class="result-value-big">{{ "%.4f"|format(resultado.valor_convertido) }} {{ resultado.unidad_completa }}</span>
                             </div>
                         </div>
                     {% endif %}

@@ -19,10 +19,29 @@ CATEGORIA_KEYWORDS = {
     'Masa': ['masa', 'peso', 'gramo', 'kilogramo', 'libra', 'onza', 'tonelada']
 }
 
+# Mapeo de unidades para formato con 4 decimales
+UNIDADES_COMPLETAS = {
+    # Temperatura
+    'celsius': '°C',
+    'fahrenheit': '°F',
+    'kelvin': 'K',
+    # Longitud
+    'kilometros': 'km',
+    'metros': 'm',
+    'centimetros': 'cm',
+    'milimetros': 'mm',
+    # Masa
+    'toneladas': 't',
+    'kilogramos': 'kg',
+    'gramos': 'g',
+    'miligramos': 'mg'
+}
+
 
 def check_login():
-    # ASCII Art de Sullivan
-    sullivan_art = """
+    # ASCII Art de Sullivan en color azul
+    # Códigos ANSI: \033[94m = Azul claro, \033[0m = Reset
+    sullivan_art = """\033[94m
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡾⡛⠷⣂⣄⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠟⢀⣼⣿⡿⠿⢷⡿⠓⠿⣖⣤⣤⣤⢄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣦⡸⣤⣀⣀⣀⡾⢥⡀⠀⠙⡿⣽⢿⣌⠉⢻⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -63,13 +82,13 @@ def check_login():
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡿⠉⢺⡗⠒⣄⣏⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⡁⠀⢿⣅⣀⠀⠀⠀⠀⠀⠀⠀⠀⡠⢽⣦⠚⠚⢯⠀⠱⣵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣀⣤⡎⠀⢀⡞⠁⠀⢱⠀⠀⠀⢀⣀⣤⢶⡾⠛⠋⠁⠀⠀⠉⠋⠿⣶⣤⣄⡀⠀⠀⢰⠃⠀⠙⣆⣀⠈⣷⠶⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠉⠹⠾⣽⣿⡤⣴⢶⣿⣴⣶⡟⡯⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠹⢿⣶⣶⣿⠶⣦⣿⡉⠛⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-    """
+\033[0m"""
     
     print('\n' + '=' * 70)
-    print('         SISTEMA DE CONVERSIÓN DE UNIDADES - SOAP- GR05')
+    print('\033[96m         SISTEMA DE CONVERSIÓN DE UNIDADES - SOAP- GR05\033[0m')
     print('=' * 70)
     print(sullivan_art)
-    print('                    SULLIVAN - MONSTERS INC.')
+    print('\033[96m                    SULLIVAN - MONSTERS INC.\033[0m')
     print('=' * 70)
     print('--- Login ---')
     user = input('Usuario: ').strip()
@@ -188,9 +207,12 @@ def handle_conversion(client, ops, conversion_type):
                 # Tomar la primera parte y convertir la primera letra a minúscula
                 first_part = parts[0]
                 param_name = first_part[0].lower() + first_part[1:] if len(first_part) > 1 else first_part.lower()
-                unidad_origen = first_part
-                # La segunda parte es la unidad de destino
-                unidad_destino = parts[1] if len(parts) > 1 else ''
+                unidad_origen_key = first_part.lower()
+                unidad_destino_key = parts[1].lower() if len(parts) > 1 else ''
+                
+                # Obtener nombres completos de unidades
+                unidad_origen = UNIDADES_COMPLETAS.get(unidad_origen_key, first_part)
+                unidad_destino = UNIDADES_COMPLETAS.get(unidad_destino_key, parts[1] if len(parts) > 1 else '')
         
         # Si no se pudo determinar, usar un nombre genérico
         if not param_name:
@@ -205,9 +227,9 @@ def handle_conversion(client, ops, conversion_type):
             print(f'\nConvirtiendo {valor} {unidad_origen}...')
             func = getattr(client.service, op_name)
             res = func(**params)
-            print('\n' + '=' * 50)
-            print(f'  {valor} {unidad_origen} = {res} {unidad_destino}')
-            print('=' * 50)
+            print('\n' + '=' * 70)
+            print(f'  RESULTADO: {float(res):.4f} {unidad_destino}')
+            print('=' * 70)
             input('\nPresiona Enter para continuar...')
         except Error as e:
             print(f'Error al invocar la operación: {e}')

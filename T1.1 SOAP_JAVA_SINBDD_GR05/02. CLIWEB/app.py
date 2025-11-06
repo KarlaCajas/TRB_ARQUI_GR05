@@ -37,7 +37,7 @@ def convertir_masa(valor, tipo_conversion):
             'unidad_original': conv['unidad_origen'],
             'valor_convertido': round(resultado, 4),
             'unidad_convertida': conv['unidad_destino'],
-            'formula': f"{valor} {conv['unidad_origen']} × {conv['factor']} = {round(resultado, 4)} {conv['unidad_destino']}"
+            'formula': f"{valor} {conv['unidad_origen']} × {conv['factor']} = {resultado:.4f} {conv['unidad_destino']}"
         }
     return None
 
@@ -51,7 +51,7 @@ def convertir_longitud(valor, tipo_conversion):
             'unidad_original': conv['unidad_origen'],
             'valor_convertido': round(resultado, 4),
             'unidad_convertida': conv['unidad_destino'],
-            'formula': f"{valor} {conv['unidad_origen']} × {conv['factor']} = {round(resultado, 4)} {conv['unidad_destino']}"
+            'formula': f"{valor} {conv['unidad_origen']} × {conv['factor']} = {resultado:.4f} {conv['unidad_destino']}"
         }
     return None
 
@@ -65,20 +65,20 @@ def convertir_temperatura(valor, tipo_conversion):
     # Fórmulas de conversión de temperatura
     if tipo_conversion == 'c_a_f':
         resultado = (valor * 9/5) + 32
-        formula = f"({valor} × 9/5) + 32 = {round(resultado, 2)} °F"
+        formula = f"({valor} × 9/5) + 32 = {resultado:.4f} {conv['unidad_destino']}"
     elif tipo_conversion == 'c_a_k':
         resultado = valor + 273.15
-        formula = f"{valor} + 273.15 = {round(resultado, 2)} K"
+        formula = f"{valor} + 273.15 = {resultado:.4f} {conv['unidad_destino']}"
     elif tipo_conversion == 'f_a_c':
         resultado = (valor - 32) * 5/9
-        formula = f"({valor} - 32) × 5/9 = {round(resultado, 2)} °C"
+        formula = f"({valor} - 32) × 5/9 = {resultado:.4f} {conv['unidad_destino']}"
     else:
         return None
     
     return {
         'valor_original': valor,
         'unidad_original': conv['unidad_origen'],
-        'valor_convertido': round(resultado, 2),
+        'valor_convertido': round(resultado, 4),
         'unidad_convertida': conv['unidad_destino'],
         'formula': formula
     }

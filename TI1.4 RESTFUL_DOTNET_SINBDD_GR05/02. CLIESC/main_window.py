@@ -462,51 +462,51 @@ class MainWindow:
     def celsius_a_fahrenheit(self, celsius):
         """Convierte Celsius a Fahrenheit"""
         fahrenheit = (celsius * 9/5) + 32
-        return f"{celsius} °C = {fahrenheit:.2f} °F"
+        return f"{celsius} °C = {fahrenheit:.4f} grados Fahrenheit"
     
     def fahrenheit_a_celsius(self, fahrenheit):
         """Convierte Fahrenheit a Celsius"""
         celsius = (fahrenheit - 32) * 5/9
-        return f"{fahrenheit} °F = {celsius:.2f} °C"
+        return f"{fahrenheit} °F = {celsius:.4f} grados Celsius"
     
     def celsius_a_kelvin(self, celsius):
         """Convierte Celsius a Kelvin"""
         kelvin = celsius + 273.15
-        return f"{celsius} °C = {kelvin:.2f} K"
+        return f"{celsius} °C = {kelvin:.4f} Kelvin"
     
     # ========== CONVERSIONES DE MASA ==========
     
     def kg_a_gramos(self, kg):
         """Convierte Kilogramos a Gramos"""
         gramos = kg * 1000
-        return f"{kg} kg = {gramos:.2f} g"
+        return f"{kg} kg = {gramos:.4f} gramos"
     
     def gramos_a_miligramos(self, gramos):
         """Convierte Gramos a Miligramos"""
         miligramos = gramos * 1000
-        return f"{gramos} g = {miligramos:.2f} mg"
+        return f"{gramos} g = {miligramos:.4f} miligramos"
     
     def toneladas_a_kg(self, toneladas):
         """Convierte Toneladas a Kilogramos"""
         kg = toneladas * 1000
-        return f"{toneladas} t = {kg:.2f} kg"
+        return f"{toneladas} t = {kg:.4f} kilogramos"
     
     # ========== CONVERSIONES DE LONGITUD ==========
     
     def km_a_metros(self, km):
         """Convierte Kilómetros a Metros"""
         metros = km * 1000
-        return f"{km} km = {metros:.2f} m"
+        return f"{km} km = {metros:.4f} metros"
     
     def metros_a_cm(self, metros):
         """Convierte Metros a Centímetros"""
         cm = metros * 100
-        return f"{metros} m = {cm:.2f} cm"
+        return f"{metros} m = {cm:.4f} centímetros"
     
     def cm_a_mm(self, cm):
         """Convierte Centímetros a Milímetros"""
         mm = cm * 10
-        return f"{cm} cm = {mm:.2f} mm"
+        return f"{cm} cm = {mm:.4f} milímetros"
     
     def ejecutar(self):
         """Ejecuta el loop principal de la ventana"""
